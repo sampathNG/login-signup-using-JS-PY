@@ -32,13 +32,11 @@ if (x != 1 && x != 2){
         fs.readFile(b, (err, data) => {
             if (err) {
                 console.error(err)
-                return
-            }
-            var i = data.toString()
-            if (login1 == i[0] && login2 == i[-1]) {
-                console.log("login successfull")
             }else{
-                console.log("username or password incorrect")
+                var t = data.toString().split(",")
+                if (login1 == t[0] && login2 == t[-1]){
+                    console.log("login successfull")
+                }
             }
         })
     
